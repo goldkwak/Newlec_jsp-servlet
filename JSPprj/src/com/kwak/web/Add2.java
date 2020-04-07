@@ -9,24 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/add")
-public class Add extends HttpServlet{
+@WebServlet("/add")
+public class Add2 extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
-		String x_ = request.getParameter("x");
-		String y_ = request.getParameter("y");
-
-		int x = 0;
-		int y = 0;
+		String[] num_ = request.getParameterValues("num");
 		
-		if(!x_.equals("")) x = Integer.parseInt(x_);
-		if(!y_.equals("")) y = Integer.parseInt(y_);
+		int result = 0;
 		
-		int result = x + y;
+		for(int i = 0; i<num_.length; i++) {
+			int num = Integer.parseInt(num_[i]);
+			result += num;
+		}
 		
 		response.getWriter().printf("result is %d\n", result);
 		
