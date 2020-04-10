@@ -59,10 +59,9 @@ public class Calc3 extends HttpServlet{
 		if(operator != null && operator.equals("C")) { //초기화
 			expCookie.setMaxAge(0);
 		}
+		
+		expCookie.setPath("/calc3");
 		response.addCookie(expCookie);
 		response.sendRedirect("calcpage"); //매핑된 이름을 쓴다.
-			
-	}	
-		
-
+	}
 }
