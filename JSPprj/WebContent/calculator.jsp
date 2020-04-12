@@ -3,6 +3,7 @@
 	int x = 3;
 	int y = 4;
 	int z = 5;
+	int v = 6;
 %>
 
 <!DOCTYPE html>
